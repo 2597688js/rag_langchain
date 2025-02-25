@@ -43,4 +43,4 @@ jobs:
           STREAMLIT_EMAIL: ${{ secrets.STREAMLIT_EMAIL }}
           STREAMLIT_APP_NAME: ${{ secrets.STREAMLIT_APP_NAME }}
         run: |
-          streamlit deploy src/app.py --email $STREAMLIT_EMAIL --app-name $STREAMLIT_APP_NAME
+          streamlit run src/app.py
