@@ -26,23 +26,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install streamlit
-          pip show streamlit
 
       - name: Run Tests
         run: pytest tests/
 
-  deploy:
-    name: Deploy to Streamlit
-    needs: test
+  notify:
+    name: Notify About New Deployment
     runs-on: ubuntu-latest
+    needs: test
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Deploy to Streamlit
-        env:
-          STREAMLIT_EMAIL: ${{ secrets.STREAMLIT_EMAIL }}
-          STREAMLIT_APP_NAME: ${{ secrets.STREAMLIT_APP_NAME }}
-        run: |
-          streamlit run src/rag_app.py
+      - name: Send Notification
+        run: echo "Push detected on main. Go to Streamlit Cloud & Rerun the app!"
