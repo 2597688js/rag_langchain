@@ -1,0 +1,35 @@
+# Ignore the virtual environment
+venv/
+codes/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore PyCharm/JetBrains settings
+.idea/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore Streamlit secrets (DO NOT COMMIT API KEYS)
+.streamlit/secrets.toml
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Ignore compiled and temporary files
+*.egg-info/
+dist/
+build/
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore Docker-related files (if applicable)
+.dockerignore
